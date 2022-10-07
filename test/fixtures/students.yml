@@ -1,21 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
-  second_name: MyString
-  last_name: MyString
-  phone: MyString
-  email: MyString
-  location: MyString
+  first_name: "first_name"
+  second_name: "second_name"
+  last_name: "last_name"
+  phone: "0791199816"
+  email: "kinyodaniel@gmail.com"
+  location: "Nairobi"
   country_id: 1
-  country_code: MyString
+  country_code: "KE"
 
 two:
-  first_name: MyString
-  second_name: MyString
-  last_name: MyString
-  phone: MyString
-  email: MyString
-  location: MyString
+  first_name: "first_name2"
+  second_name: "second_name2"
+  last_name: "last_name2"
+  phone: "0791199816"
+  email: "kinyodaniel@outlook.com"
+  location: "Nairobi"
   country_id: 1
-  country_code: MyString
+  country_code: "KE"

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       post '/soft_destroy', to: 'student_applications#soft_destroy'
       resources :sessions , only: [:create ,:destroy]
       post '/verify_authentication' , to: 'sessions#verify_authentication'
+      post '/verify_authentication_rpc', to: 'sessions#verify_authentication_rpc'
       resources :institutions
       get  '/dashboard_data', to: 'dashboard#index'
       resources :appointments

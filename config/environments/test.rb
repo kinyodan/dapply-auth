@@ -4,16 +4,15 @@ require "active_support/core_ext/integer/time"
 # test suite. You never need to work with it otherwise. Remember that
 # your test database is "scratch space" for the test suite and is wiped
 # and recreated between test runs. Don't rely on the data there!
-config.action_mailer.delivery_method = :mailgun
-config.action_mailer.mailgun_settings = {
-  api_key: ENV.fetch('MAILGUN_API_KEY'),
-  domain: 'wankimani.com',
-  # api_host: 'api.eu.mailgun.net'  # Uncomment this line for EU region domains
-}
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV.fetch('MAILGUN_API_KEY'),
+    domain: 'wankimani.com',
+    # api_host: 'api.eu.mailgun.net'  # Uncomment this line for EU region domains
+  }
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
   config.cache_classes = true
 

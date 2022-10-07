@@ -58,8 +58,34 @@ class Api::V1::SessionsController < ApplicationController
       end
 
     else
-      render json: { data: :unauthorized, status: :created, message: 'user failed logged in' }
+      render json: { data: :unauthorized, status: false, message: 'user failed logged in' }
     end
+  end
+
+
+  def verify_authentication_rpc
+    
+    header_params = params[:Authorization]
+    p header_params
+
+    decoded_response = decrypt(header_params[:token], 'hmac_secret_key', 'HS256')
+    if (@user = User.find_by_jti(decoded_response[:jti]))
+      role_user = @user.has_role? :student
+      role_admin = @user.has_role? :admin
+      @student = Student.where(email: @user.email).first
+
+      if role_user && !role_admin
+        render json: { status: true, role_student: role_user, id: @student.uuid, message: 'User Authenticated ' }
+      end
+
+      if role_admin
+        render json: { status: true, role_admin: role_admin, message: 'User Authenticated ' }
+      end
+
+    else
+      render json: { data: :unauthorized, status: false, message: 'user failed logged in' }
+    end
+
   end
 
   protected

@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  uuid: MyString
+  uuid: "uuid12345"
   student_id: 1
   ksce_cert: MyString
   passport: MyString
@@ -18,7 +18,7 @@ one:
   previous_visa: MyString
   status: MyString
   upload_by: MyString
-  applicatio_admin: MyString
+  application_admin: MyString
   progress_state: MyString
   progress_steps: 1
   current_step: 1
@@ -45,7 +45,7 @@ two:
   previous_visa: MyString
   status: MyString
   upload_by: MyString
-  applicatio_admin: MyString
+  application_admin: MyString
   progress_state: MyString
   progress_steps: 1
   current_step: 1
